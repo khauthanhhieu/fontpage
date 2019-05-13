@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<title>E-Shopping</title>
+	<% include partials/head %>
+</head>
+<!--/head-->
+
+<body>
+	<% include partials/header %>
+	<section id="form">
+		<!--form-->
+		<div class="container">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="login-form">
+					<!--login form-->
+					<h2>Nhập mã bảo mật</h2>
+					<p>Vui lòng kiểm tra tin nhắn có chứa mã trong email của bạn. Mã của bạn gồm 6 số.</p>
+					<form action="/recovery/password" method="POST">
+						<input type="text" placeholder="Nhập mã" />
+						<button class="btn btn-default">
+							Tiếp tục
+						</button>
+					</form>
+				</div>
+				<!--/login form-->
+			</div>
+		</div>
+	</section>
+	<!--/form-->
+
+	</div>
+	<% include partials/footer %>
+	<% include partials/javascripts %>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Liên hệ | E-Shopping</title>
+	<% include partials/head %>    
+</head><!--/head-->
+
+<body>
+	<% include partials/header %>
+	<div id="contact-page" class="container">
+    	<div class="bg">
+	    	<div class="row">    		
+	    		<div class="col-sm-12">    			   			
+					<h2 class="title text-center">Liên hệ</h2>    			    				    				
+					<div id="map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.637146852014!2d106.67900811462086!3d10.762422862395388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1bfc262bf1%3A0x4e843897f2900135!2zMjI3IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIEPhu6ssIFBoxrDhu51uZyA0LCBRdeG6rW4gNSwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1555850007504!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>					</div>
+					</div>	 		
+				</div>			 		
+			</div>    	
+    		<div class="row">  	
+	    		<div class="col-sm-8">
+	    			<div class="contact-form">
+	    				<h2 class="title text-center">Gửi tin nhắn</h2>
+	    				<div class="status alert alert-success" style="display: none"></div>
+				    	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
+				            <div class="form-group col-md-6">
+				                <input type="text" name="name" class="form-control" required="required" placeholder="Tên">
+				            </div>
+				            <div class="form-group col-md-6">
+				                <input type="email" name="email" class="form-control" required="required" placeholder="Email">
+				            </div>
+				            <div class="form-group col-md-12">
+				                <input type="text" name="subject" class="form-control" required="required" placeholder="Tiêu đề">
+				            </div>
+				            <div class="form-group col-md-12">
+				                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Nội dung"></textarea>
+				            </div>                        
+				            <div class="form-group col-md-12">
+				                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Gửi">
+				            </div>
+				        </form>
+	    			</div>
+	    		</div>
+	    		<div class="col-sm-4">
+	    			<div class="contact-info">
+	    				<h2 class="title text-center">Thông tin liên hệ</h2>
+	    				<address>
+							<p><strong>Mercenaries Team</strong></p>
+							<p>Khâu Thanh Hiếu - 1612197</p>
+							<p>Dương Văn Khang - 1612285</p>
+							<p>Nguyễn Quang Huy - 1612263</p>
+							<p>227, Nguyễn Văn Cừ, Phường 4, Quận 5</p>
+							<p>TP. Hồ Chỉ Minh, Việt Nam</p>
+							<p>SĐT: +84 798899797</p>
+							<p>Email: thanhhieu021298@gmail.com</p>
+	    				</address>
+	    				<div class="social-networks">
+	    					<h2 class="title text-center">Mạng xã hội</h2>
+							<ul>
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-google-plus"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</li>
+							</ul>
+	    				</div>
+	    			</div>
+    			</div>    			
+	    	</div>  
+    	</div>	
+    </div><!--/#contact-page-->
+	
+	<% include partials/footer %>
+  
+    <script src="javascripts/jquery.js"></script>
+	<script src="javascripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="javascripts/gmaps.js"></script>
+	<script src="javascripts/contact.js"></script>
+	<script src="javascripts/price-range.js"></script>
+    <script src="javascripts/jquery.scrollUp.min.js"></script>
+    <script src="javascripts/jquery.prettyPhoto.js"></script>
+    <script src="javascripts/main.js"></script>
+</body>
+</html>

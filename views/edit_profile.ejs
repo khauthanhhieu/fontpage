@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>Chỉnh sửa thông tin cá nhân | E-Shopping</title>
+    <% include partials/head %>
+</head>
+<!--/head-->
+
+<body>
+    <% include partials/header %>
+    <h4>Chỉnh sửa thông tin</h4>
+    <section id="form">
+        <!--form-->
+        <div class="container">
+
+            <div class="login-form">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p>Tên</p>
+                            <input type="text" value="Khâu Thanh Hiếu" />
+                        </div>
+                        <div class="col-sm-4">
+                            <p>Địa chỉ email</p>
+                            <input type="email" value="thanhhieu021298@gmail.com" />
+                        </div>
+                        <div class="col-sm-4">
+                            <p>Số điện thoại</p>
+                            <input type="tel" value="0798899797" />
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-sm-4">
+                                <p>Ngày sinh</p>
+                                <input type="date" value="1998-12-02" />
+                            </div>
+                            <div class="col-sm-4">
+                                <p>Mã số thuế</p>
+                                <input type="text"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-1 col-sm-offset-11">
+                                <button type="button" onclick="Reset()">Lưu</button>
+                            </div>
+                        </div>
+                </form>
+
+                <!--/login form-->
+            </div>
+        </div>
+    </section>
+    <% include partials/footer %>
+    <% include partials/javascripts %>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<title>Quên mật khẩu | E-Shopping</title>
+	<% include partials/head %>
+	<% if(error && error != "") { %>
+		<script>alert("Email khong duoc de trong");</script>
+	<% } %>
+</head>
+<!--/head-->
+
+<body>
+	<% include partials/header %>
+	<section id="form">
+		<!--form-->
+		<div class="container">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="login-form">
+					<!--login form-->
+					<h2>Vui lòng nhập địa chỉ Email</h2>
+					<form action="/recovery/code" method="POST">
+						<input type="text" placeholder="Địa chỉ email" name="email" />
+						<button type="submit" class="btn btn-default">Tiếp tục</button>
+					</form>
+				</div>
+				<!--/login form-->
+			</div>
+		</div>
+	</section>
+	<!--/form-->
+
+	</div>
+	<% include partials/footer %>
+	<% include partials/javascripts %>
+	
+</body>
+
+</html>
