@@ -50,25 +50,26 @@
 					<div class="features_items">
 						<!--features_items-->
 						<h2 class="title text-center">Tìm kiếm phổ biến</h2>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/home/canon.jpg" alt="" />
-										<h2>11.590.000 ₫</h2>
-										<p>Máy Ảnh Canon 750D</p>
-										<a href="/product-details" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
+						<% pList.forEach(function(pItem) { %>
+							<div class="col-sm-4">
+								<div class="product-image-wrapper">
+									<div class="single-products">
+										<div class="productinfo text-center">
+											<img src="<%= pItem.path_picture %>" alt="" />
+											<h2><%= pItem.price %> ₫</h2>
+											<p><%= pItem.name %></p>
+											<a href="/product-details" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="choose">
+										<ul class="nav nav-pills nav-justified">
+											<li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào giỏ hàng</a></li>
+											<li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào mục so sánh</a></li>
+										</ul>
 									</div>
 								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào giỏ hàng</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào mục so sánh</a></li>
-									</ul>
-								</div>
 							</div>
-						</div>
-
+						<% }); %>
 
 					</div>
 					<!--features_items-->
