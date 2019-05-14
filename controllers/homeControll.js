@@ -19,6 +19,7 @@ exports.loadPage = function(req, res, next){
         conn.query(sql, function (err, products, fields) {
             if (err) throw err;
             res.render('index', {title: 'Express' , pList: products});
+            res.end();
         });
     });
 }

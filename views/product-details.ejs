@@ -22,7 +22,7 @@
 						<!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="images/home/canon.jpg" alt="" />
+								<img src="<%= pItem.path_picture %>" alt="" />
 								<h3>ZOOM</h3>
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -55,11 +55,11 @@
 							<div class="product-information">
 								<!--/product-information-->
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>Máy Ảnh Canon 750D</h2>
-								<p>Web ID: 1089772</p>
+								<h2><%= pItem.name %></h2>
+								<p>Web ID: <%= pItem.id %></p>
 								<img src="images/product-details/rating.png" alt="" />
 								<span>
-									<span>11.590.000 ₫</span>
+									<span><%= pItem.price %> ₫</span>
 									<label>Quantity:</label>
 									<input type="text" value="3" />
 									<button type="button" class="btn btn-fefault cart">
@@ -67,10 +67,11 @@
 										Thêm vào giỏ hàng
 									</button>
 								</span>
-								<p><b>Tình trạng:</b> Còn hàng</p>
-								<p><b>Trạng thái:</b> Mới 100%</p>
-								<p><b>Thương hiệu:</b> Canon</p>
-								<a href=""><img src="images/product-details/share.png" class="share img-responsive" alt="" /></a>
+								<p><b>Tình trạng : </b> Còn hàng</p>
+								<p><b>Trạng thái : </b> Mới 100%</p>
+								<p><b>Thương hiệu : </b><%= pItem.productor %></p>
+								<a href=""><img src="images/product-details/share.png" class="share img-responsive"
+										alt="" /></a>
 							</div>
 							<!--/product-information-->
 						</div>
@@ -144,30 +145,7 @@
 							</div>
 
 							<div class="tab-pane fade active in" id="describe">
-								<h3>Thiết kế gọn nhẹ</h3>
-								<p>Máy Ảnh Canon EOS 750D thuộc dòng máy ảnh chuyên nghiệp và được thiết kế gọn nhẹ, bạn có thể dễ dàng
-									mang theo trong quá trình di chuyển, đi xa và thoải mái chụp ảnh, quay phim trong thời gian dài, máy
-									hạn chế tình trạng mỏi tay. Sản phẩm có vỏ ngoài thiết kế cứng cáp, bền bỉ và báng cầm tay có độ bám,
-									giúp han chế trơn trượt và hỗ trợ cầm nắm chắc chắn khi chụp.</p>
-								<h3>Cảm biến 24.2MP và bộ xử lý hình ảnh DIGIC 6</h3>
-								<p>Canon 750D dòng máy ảnh DSLR sở hữu cảm biến 24.2 MP kích thước giúp mang lại những hình ảnh đẹp có
-									kích thước lớn. Kết hợp độ phân giải lớn cùng bộ xử lý hình ảnh DIGIC 6 giúp nâng cao tốc độ xử lý và
-									chất lượng hình ảnh cao. Ngoài ra, bạn cũng có thể quay các đoạn video Full HD chuyên nghiệp hơn.</p>
-								<h3>Hệ thống lấy nét 19 điểm</h3>
-								<p>Canon EOS 750D là máy ảnh sở hữu hệ thống lấy nét 19 điểm cross-type tất cả hệ thống AF kết hợp cùng
-									tốc độ chụp 5 fps giúp bạn không bỏ lỡ bất cứ khoảnh khắc quan trọng nào. Bạn sẽ dàng tập trung vào
-									các đối tượng trong chế độ lựa chọn khu vực để có thể có những shot ảnh như ý.</p>
-								<h3>Hệ thống lấy nét Hybrid CMOS AF III</h3>
-								<p>Hệ thống lấy nét Hybrid CMOS AF III được trang bị chức năng tự lấy nét nhanh khi bật Live View. Kết
-									hợp hệ thống Hybrid CMOS AF III cùng với màn hình LCD cảm ứng giúp bạn có thể có những thước phim chất
-									lượng cao.</p>
-								<h3>Ống kính 18 -55mm STM</h3>
-								<p>Máy Ảnh Canon EOS 750D được trang bị ống kính 18 -55mm STM . Ống kính 18 - 55mm STM tương đương với
-									dải tiêu cự 18 – 55 mm cùng công nghệ giảm rung quang học IS (Image Stabilization và động cơ lấy nét
-									bước STM (Stepper Motor) giúp bạn có thể chụp những bức ảnh từ xa dễ dàng hơn.</p>
-								<h3>Hỗ trợ Wi-Fi và NFC</h3>
-								<p>Canon EOS 750D còn hỗ trợ kết nối không dây Wi-Fi và NFC. Nhờ kết nối không dây, bạn có thể dễ dàng
-									chia sẽ những hình ảnh đã chụp qua các thiết bị khác.</p>
+								<p><%= pItem.descr %></p>
 							</div>
 
 							<div class="tab-pane fade" id="tag">
@@ -209,13 +187,8 @@
 	</section>
 
 	<% include partials/footer %>
+	<% include partials/javascripts %>
 
-	<script src="javascripts/jquery.js"></script>
-	<script src="javascripts/price-range.js"></script>
-	<script src="javascripts/jquery.scrollUp.min.js"></script>
-	<script src="javascripts/bootstrap.min.js"></script>
-	<script src="javascripts/jquery.prettyPhoto.js"></script>
-	<script src="javascripts/main.js"></script>
 </body>
 
 </html>
