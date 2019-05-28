@@ -16,6 +16,7 @@ var recoverRouter = require('./routes/recovery');
 var productRouter = require('./routes/product');
 
 var app = express();
+ global.id = 0;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

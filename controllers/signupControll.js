@@ -22,13 +22,14 @@ exports.signup = function(req, res) {
 		}
 		else {
 			var sql1 = 'INSERT INTO users (username, email, password, fullname, tel, birthday, address, isdelete) VALUES (?,?,?,?,?,?,?,?)';
-			var data1 = [req.body.txtUserNameSignup, req.body.txtEmailSignup, req.body.txtPasswordSignup1, req.body.txtFullnameSignup, req.body.txtUserPhoneSignup,null, req.body.txtAddressSignup, 0];
+			var data1 = [req.body.txtUserNameSignup, req.body.txtEmailSignup, md5(req.body.txtPasswordSignup1), req.body.txtFullnameSignup, req.body.txtUserPhoneSignup,null, req.body.txtAddressSignup, 0];
 			conn.query(sql1, data1, (err, results, fields)=>{
 				if(err) {
 					return console.err(err.message);
 
 				}
 			});
+			
 			res.redirect('../');
 
 			console.log('thanh cong!');
