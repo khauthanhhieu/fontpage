@@ -18,6 +18,7 @@ router.get('/forget-password', forget_controller.forgetPass_detail);
 
 router.get('/profile/:id', profile_controller.profile_detail);
 router.get('/profile/:id/edit', edit_profile_controller.editProfile_detail);
+router.post('/profile/:id/edit', edit_profile_controller.editProfile_post);
 router.get('/cart', cart_controller.cart_detail);
 
 module.exports = router;

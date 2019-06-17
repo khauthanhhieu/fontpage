@@ -53,63 +53,19 @@
 							<td class="cart_total">
 								<p class="cart_total_price"><%= cItem.price %></p>
 							</td>
+							
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								<form action="" method="post">
+									<input name="txtId" type="text" value="<%= cItem.idCart %>" hidden="true">
+									<button type="submit">
+										<i class="fa fa-times"></i>
+									</button>
+								</form>
+								
 							</td>
 						</tr>
 						<% }); %>
-						<!-- <tr>
-							<td class="cart_product">
-								<a href=""><img src="/images/home/sua.jpg" width="110" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Sữa Bột Enfagrow A+ 4 (1.8kg)</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>717.000 ₫</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1"
-										autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">717.000</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="/images/home/tainghe1.jpg" width="110" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Tai Nghe Wutsun JS200 Stereo Earphone Sport</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>133.000 ₫</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1"
-										autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">133.000</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr> -->
+						
 					</tbody>
 				</table>
 			</div>
