@@ -22,8 +22,8 @@ exports.signup = function(req, res) {
 			res.render('signup', {title: 'Express'});
 		}
 		else {
-			var sql1 = 'INSERT INTO users (username, email, password, fullname, birthday, address, isdelete) VALUES (?,?,?,?,?,?,?)';
-			var data1 = [req.body.txtUserNameSignup, req.body.txtEmailSignup, md5(req.body.txtPasswordSignup1), req.body.txtFullnameSignup, null, req.body.txtAddressSignup, 0];
+			var sql1 = 'INSERT INTO users (username, email, password, fullname, birthday, address, tel, isdelete) VALUES (?,?,?,?,?,?,?,?)';
+			var data1 = [req.body.txtUserNameSignup, req.body.txtEmailSignup, md5(req.body.txtPasswordSignup1), req.body.txtFullnameSignup, null, req.body.txtAddressSignup, req.body.txtUserPhoneSignup, 0];
 			console.log(req.body.txtPasswordSignup1, ' day ne: ')
 			conn.query(sql1, data1, (err, results, fields)=>{
 				if(err) {
