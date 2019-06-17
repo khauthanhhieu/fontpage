@@ -15,34 +15,38 @@
         <div class="container">
 
             <div class="login-form">
-                <form action="#">
+                <form action="#" method="post">
                     <div class="row">
                         <div class="col-sm-4">
                             <p>Tên</p>
-                            <input type="text" value="Khâu Thanh Hiếu" />
+                            <input name="txtTen" type="text" value="<%= uItem.fullname %>" />
                         </div>
                         <div class="col-sm-4">
                             <p>Địa chỉ email</p>
-                            <input type="email" value="thanhhieu021298@gmail.com" />
+                            <input name="txtEmail" type="email" value="<%= uItem.email %>" />
                         </div>
                         <div class="col-sm-4">
                             <p>Số điện thoại</p>
-                            <input type="tel" value="0798899797" />
+                            <input type="tel" value="" />
                         </div>
                     </div>
                     <div class="row">
                             <div class="col-sm-4">
                                 <p>Ngày sinh</p>
-                                <input type="date" value="1998-12-02" />
+                                <input type="date" value="" />
                             </div>
                             <div class="col-sm-4">
                                 <p>Mã số thuế</p>
                                 <input type="text"/>
                             </div>
+                            <div class="col-sm-4">
+                                <p>Địa chỉ</p>
+                                <input name="txtDiachi" type="text" value="<%= uItem.address%>" />
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-1 col-sm-offset-11">
-                                <button type="button" onclick="Reset()">Lưu</button>
+                                <button type="submit" onclick="Reset()">Lưu</button>
                             </div>
                         </div>
                 </form>
