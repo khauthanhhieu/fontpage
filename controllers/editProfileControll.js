@@ -20,8 +20,9 @@ exports.editProfile_detail = function(req, res) {
 }
 
 exports.editProfile_post = function(req, res) {
-	var sql = 'UPDATE users SET fullname=?, email=?, address=? WHERE id=?';
-	var data = [req.body.txtTen, req.body.txtEmail, req.body.txtDiachi, global.id];
+	var sql = 'UPDATE users SET fullname=?, email=?, address=?, tel=?, birthday=? WHERE id=?';
+	var data = [req.body.txtTen, req.body.txtEmail, req.body.txtDiachi, req.body.txtSoDienThoai, req.body.txtNgaySinh, global.id];
+	console.log('ngay sinh: ', req.body.txtNgaySinh)
 	conn.query(sql, data, (err)=>{
 		if(err) throw err;
 		var sql1 = 'SELECT * FROM users WHERE id =?';

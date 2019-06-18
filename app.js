@@ -46,7 +46,6 @@ app.use('/recovery', recoverRouter);
 app.use('/product', productRouter);
 app.use('/history', historyRouter);
 
-=======
 app.use('/reset_password', forgotRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
