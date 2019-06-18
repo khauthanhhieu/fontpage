@@ -47,353 +47,73 @@
 					<% include partials/left-list %>
 				</div>
 				<div class="col-sm-9 padding-right">
-					<div class="features_items">
-						<!--features_items-->
-						<h2 class="title text-center">Tìm kiếm phổ biến</h2>
-						<% pList.forEach(function(pItem) { %>
-							<div class="col-sm-4">
-								<div class="product-image-wrapper">
-									<div class="single-products">
-										<div class="productinfo text-center">
-											<img src="<%= pItem.path_picture %>" alt="" />
-											<h2><%= pItem.price %> ₫</h2>
-											<p><%= pItem.name %></p>
-											<a href="/product/<%= pItem.id %>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-9 padding-right">
+								<div class="features_items">
+									<!--features_items-->
+									<h2 class="title text-center">Tìm kiếm phổ biến</h2>
+									<% pList.forEach(function(pItem) { %>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="<%= pItem.path_picture %>" alt="" />
+													<h2><%= pItem.price %> ₫</h2>
+													<p><%= pItem.name %></p>
+													<a href="/product/<%= pItem.id %>"
+														class="btn btn-default add-to-cart"><i
+															class="fa fa-shopping-cart"></i>Xem chi tiết</a>
+												</div>
+											</div>
+											<div class="choose">
+												<ul class="nav nav-pills nav-justified">
+													<li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào giỏ
+															hàng</a></li>
+													<li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào mục so
+															sánh</a></li>
+												</ul>
+											</div>
 										</div>
 									</div>
-									<div class="choose">
-										<ul class="nav nav-pills nav-justified">
-											<li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào giỏ hàng</a></li>
-											<li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào mục so sánh</a></li>
-										</ul>
-									</div>
+									<% }); %>
 								</div>
 							</div>
-						<% }); %>
-
-					</div>
-					
-
-					<div class="category-tab">
-						
-						<div class="col-sm-12">
-							<ul class="nav nav-tabs">
-								<li class="active"><a href="#headphone" data-toggle="tab">Tai nghe</a></li>
-								<li><a href="#backup-charger" data-toggle="tab">Sạc dự phòng</a></li>
-								<li><a href="#ipad" data-toggle="tab">iPad</a></li>
-								<li><a href="#vali" data-toggle="tab">Vali</a></li>
-								<li><a href="#envelope" data-toggle="tab">Bao lì xì</a></li>
+						</div>
+						<div class="row">
+							<ul class="pagination">
+								<% if(iPage > 1) { %>
+								<li class="page-item">
+									<a class="page-link" href="/home?p=<%= iPage - 1 %>">
+										<< </a> </li> <% } %> <% var begin = 1; %>
+											<% if (begin < iPage - 1) begin = iPage - 1; %> <% var end = nPage %>
+											<% if (end > begin + 5) end = begin + 5; %>
+											<% for(var i = begin; i <= end; i++) { %> <% if(iPage == i) { %> <li
+											class="page-item active"><a class="page-link" href="#"><%= i %></a></li>
+								<% } else { %>
+								<li class="page-item"><a class="page-link" href="/home?p=<%= i %>"><%= i %></a></li>
+								<% } %>
+								<% } %>
+								<% if (iPage < parseInt(nPage)) { %>
+								<% console.log(iPage + "<" + nPage) %>
+								<li class="page-item">
+									<a class="page-link" href="/home?p=<%= parseInt(iPage) + 1 %>">
+										>>
+									</a>
+								</li>
+								<% } %>
 							</ul>
 						</div>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="headphone">
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/tainghe1.jpg" alt="" />
-												<h2>133.000 ₫</h2>
-												<p>Tai Nghe Wutsun JS200 Stereo Earphone Sport</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/tainghe2.jpg" alt="" />
-												<h2>119.000 ₫</h2>
-												<p>Tai nghe Honor Earphone Super Bass AM115</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/tainghe3.jpg" alt="" />
-												<h2>2.800.000 ₫</h2>
-												<p>Tai Nghe Headphone Bluetooth Remax RB-500HB</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/tainghe4.jpg" alt="" />
-												<h2>299.000 ₫</h2>
-												<p>Tai Nghe Y98</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="tab-pane fade" id="backup-charger">
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/sacduphong1.jpg" alt="" />
-												<h2>279.000 ₫</h2>
-												<p> Pin Sạc Dự Phòng Xiaomi Gen 2S Version 2018</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/sacduphong2.jpg" alt="" />
-												<h2>129.000 ₫</h2>
-												<p>Pin Sạc Dự Phòng Rapoo P20 5000mAh</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/sacduphong3.jpg" alt="" />
-												<h2>1.090.000 ₫</h2>
-												<p>Pin Sạc Dự Phòng Anker PowerCore Elite 20000mAh</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/sacduphong4.jpg" alt="" />
-												<h2>86.797 ₫</h2>
-												<p>Pin sạc dự phòng Arun 5600mAh</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="tab-pane fade" id="ipad">
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/ipad1.jpg" alt="" />
-												<h2>8.990.000 ₫</h2>
-												<p>iPad Wifi Cellular 32GB New 2017</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/ipad2.jpg" alt="" />
-												<h2>11.490.000 ₫</h2>
-												<p>iPad Pro 9.7 inch Wifi Cellular 32GB</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/ipad3.jpg" alt="" />
-												<h2>13.990.000 ₫</h2>
-												<p>iPad Pro 10.5 inch 64GB Wifi</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/ipad4.jpg" alt="" />
-												<h2>37.990.000 ₫ </h2>
-												<p>iPad Pro 12.9 inch (2018) 512GB Wifi</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="tab-pane fade" id="vali">
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/vali1.jpg" alt="" />
-												<h2>1.890.000 ₫</h2>
-												<p>Vali Snoopy</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/vali2.jpg" alt="" />
-												<h2>2.490.000 ₫</h2>
-												<p>Vali Chovis Horus (28")</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/vali3.jpg" alt="" />
-												<h2>1.990.000 ₫</h2>
-												<p>Vali Nhựa Doma DH824</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/vali4.jpg" alt="" />
-												<h2>990.000 ₫</h2>
-												<p>Vali Hello kitty</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="tab-pane fade" id="envelope">
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/baolixi1.jpg" alt="" />
-												<h2>35.000 ₫</h2>
-												<p>Xấp Bao Lì Xì Tết Truyền Thống 5 (10 Cái/Xấp)</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/baolixi2.jpg" alt="" />
-												<h2>35.000 ₫</h2>
-												<p>Xấp Bao Lì Xì Heo Lì Xì Đi (10 Cái/Xấp)</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/baolixi3.jpg" alt="" />
-												<h2>95.000 ₫</h2>
-												<p>Combo 3 bao lì xì vải gấm cao cấp</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="/images/home/baolixi4.jpg" alt="" />
-												<h2>18.000 ₫</h2>
-												<p>Xấp Bao Lì Xì - Tết Hạnh Phúc (10 Cái/Xấp)</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-													hàng</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
-					<!--/category-tab-->
-
-					<% include partials/recommeded_item %>
-
 				</div>
 			</div>
+			<% include partials/recommeded_item %>
 		</div>
 	</section>
 
 	<% include partials/footer %>
 	<% include partials/javascripts %>
-	
+
 </body>
 
 </html>
