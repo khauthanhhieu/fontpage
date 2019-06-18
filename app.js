@@ -14,6 +14,7 @@ var checkoutRouter = require('./routes/checkout');
 var contactRouter = require('./routes/contact')
 var recoverRouter = require('./routes/recovery');
 var productRouter = require('./routes/product');
+var historyRouter = require('./routes/history');
 
 var app = express();
  global.id = 0;
@@ -38,6 +39,7 @@ app.use('/checkout', checkoutRouter);
 app.use('/contact', contactRouter);
 app.use('/recovery', recoverRouter);
 app.use('/product', productRouter);
+app.use('/history', historyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

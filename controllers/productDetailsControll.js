@@ -21,11 +21,13 @@ exports.addCart = function(req, res) {
 		return;
 	}
 
-	console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: ', idProduct, '   ---   ', idUser)
+	
 	var sql = 'SELECT * FROM cartdetails WHERE user_id =? AND product_id =?';
 	var data = [idUser, idProduct];
 	conn.query(sql, data, (err, cart, fields)=>{
 		if (err) throw err;
+		console.log('toi day')
+
 		if(cart[0] == null) {
 			var sql1 = 'INSERT INTO cartdetails (`user_id`, `product_id`, `number`) values ( ?, ?, 1)';
 			var data1 = [idUser, idProduct];
@@ -37,9 +39,9 @@ exports.addCart = function(req, res) {
 			})
 		}
 		else {
-			var sql2 = 'UPDATE cartdetails SET `number` =? WHERE id =?';
+			var sql2 = 'UPDATE cartdetails SET `number` =? WHERE idCart =?';
 			console.log('so luong ne: ', cart[0].number)
-			var data2 = [++cart[0].number, cart[0].id];
+			var data2 = [++cart[0].number, cart[0].idCart];
 			conn.query(sql2, data2, (err)=>{
 				if(err) throw err;
 				console.log('cap nhat thanh cong sua');

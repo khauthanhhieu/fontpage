@@ -31,70 +31,29 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% oList.forEach(function(oItem){ %>
                         <tr>
                             <td class="cart_description">
-                                <h4><a href="">Máy Ảnh Canon 750D</a></h4>
-                                <p>Web ID: 1089772</p>
+                                <h4><a href=""><%= oItem.name %></a></h4>
+                                <!-- <p>Web ID: 1089772</p> -->
                             </td>
                             <td class="cart_quantity">
-                                <h4>1</h4>
+                                <h4><%= oItem.number %></h4>
                             </td>
                             <td class="cart_total">
-                                <p class="cart_total_price">11.590.000 ₫</p>
+                                <p class="cart_total_price"><%= oItem.price %></p>
                             </td>
                             <td class="order_date">
-                                <p>24/04/2019</p>
+                                <p><%= oItem.date %></p>
                             </td>
                             <td class="item_stt">
-                                <h5>Đang chờ xác nhận</h5>
+                                <h5><%= oItem.Status %></h5>
                             </td>
                             <td>
                                 <button class="btn">Xem chi tiết</button>
                             </td>
                         </tr>
-
-                        <tr>
-                            <td class="cart_description">
-                                <h4><a href="">Sữa Bột Enfagrow A+ 4 (1.8kg)</a></h4>
-                                <p>Web ID: 1089772</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <h4>1</h4>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">717.000 ₫</p>
-                            </td>
-                            <td class="order_date">
-                                <p>20/04/2019</p>
-                            </td>
-                            <td class="item_stt">
-                                <h5>Đang giao hàng</h5>
-                            </td>
-                            <td>
-                                <button class="btn">Xem chi tiết</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cart_description">
-                                <h4><a href="">Tai Nghe Wutsun JS200 Stereo Earphone Sport</a></h4>
-                                <p>Web ID: 1089772</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <h4>1</h4>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">133.000 ₫</p>
-                            </td>
-                            <td class="order_date">
-                                <p>01/04/2019</p>
-                            </td>
-                            <td class="item_stt">
-                                <h5>Đã thanh toán</h5>
-                            </td>
-                            <td>
-                                <button class="btn">Xem chi tiết</button>
-                            </td>
-                        </tr>
+                        <% }); %>
                     </tbody>
                 </table>
             </div>

@@ -16,97 +16,7 @@
 				</ol>
 			</div><!--/breadcrums-->
 
-			<div class="step-one">
-				<h2 class="heading">Bước 1</h2>
-			</div>
-			<div class="checkout-options">
-				<h3>New User</h3>
-				<p>Checkout options</p>
-				<ul class="nav">
-					<li>
-						<label><input type="checkbox"> Đăng kí tài khoản</label>
-					</li>
-					<li>
-						<label><input type="checkbox"> Guest Checkout</label>
-					</li>
-					<li>
-						<a href=""><i class="fa fa-times"></i>Hủy</a>
-					</li>
-				</ul>
-			</div><!--/checkout-options-->
-
-			<div class="register-req">
-				<p>Vui lòng đăng kí/ đăng nhập tài khoản để có thể xem lại lịch sử giao dịch.</p>
-			</div><!--/register-req-->
-
-			<div class="shopper-informations">
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="shopper-info">
-							<p>Thông tin mua sắm</p>
-							<form>
-								<input type="text" placeholder="Tên hiển thị">
-								<input type="text" placeholder="Tên người dùng">
-								<input type="password" placeholder="Mật khẩu">
-								<input type="password" placeholder="Xác nhận mật khẩu">
-							</form>
-							<a class="btn btn-primary" href="">Get Quotes</a>
-							<a class="btn btn-primary" href="">Tiếp tục</a>
-						</div>
-					</div>
-					<div class="col-sm-5 clearfix">
-						<div class="bill-to">
-							<p>Gửi hàng đến</p>
-							<div class="form-one">
-								<form>
-									<input type="text" placeholder="Tên công ty">
-									<input type="text" placeholder="Email*">
-									<input type="text" placeholder="Title">
-									<input type="text" placeholder="Tên *">
-									<input type="text" placeholder="Tên đệm">
-									<input type="text" placeholder="Họ *">
-									<input type="text" placeholder="Địa chỉ ">
-								</form>
-							</div>
-							<div class="form-two">
-								<form>
-									<input type="text" placeholder="Zip / Postal Code *">
-									<select>
-										<option>-- Tên quốc gia --</option>
-										<option>Việt Nam</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ucrane</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
-									<select>
-										<option>Tỉnh/Thành phố</option>
-										<option>Hà Nội</option>
-										<option>TP.HCM</option>
-										<option>Ninh Thuận</option>
-										<option>Bến Tre</option>
-										<option>Long An</option>
-										<option>Cà Mau</option>
-									</select>
-									<input type="password" placeholder="Xác nhận mật khẩu">
-									<input type="text" placeholder="SĐT *">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="order-message">
-							<p>Shipping Order</p>
-							<textarea name="message"  placeholder="Ghi chú về hóa đơn của bạn, điều cần lưu ý khi giao hàng" rows="16"></textarea>
-							<label><input type="checkbox"> Gửi hàng đến địa chỉ đã chọn</label>
-						</div>	
-					</div>					
-				</div>
-			</div>
+			
 			<div class="review-payment">
 				<h2>Review & Payment</h2>
 			</div>
@@ -146,18 +56,28 @@
 								</div>
 							</td>
 							<td class="cart_total">
-								<p class="cart_total_price"><%= cItem.price %></p>
+								<p class="cart_total_price"><%= cItem.price*cItem.number %></p>
 							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
+						
 						</tr>
 						<% }); %>
 						
 					</tbody>
 				</table>
 			</div>
-			<div class="payment-options">
+			
+			<div class="row">
+				<div class="col-lg-12">
+					<form action="" method="post">
+						<button type="submit" class="btn btn-primary">Thanh Toán</button>
+					</form>
+				</div>
+			</div>
+	
+			
+			
+
+			<!-- <div class="payment-options">
 					<span>
 						<label><input type="checkbox"> Chuyển tiền qua ngân hàng</label>
 					</span>
@@ -168,7 +88,7 @@
 						<label><input type="checkbox"> Paypal</label>
 					</span>
 				</div>
-		</div>
+		</div> -->
 	</section> <!--/#cart_items-->
 
 	<% include partials/footer %>
